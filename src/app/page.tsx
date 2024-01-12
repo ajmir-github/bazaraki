@@ -1,6 +1,6 @@
 import Navbar from "@/components/NavBar";
 import ProductList from "@/components/ProductList";
-import WithSideBar from "@/components/WithSidebar";
+import WithSideBar from "@/components/WithSideBar";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 
 export default function Home({
