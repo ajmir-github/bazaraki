@@ -12,7 +12,7 @@ import FilterByCategory from "./FilterByCategory";
 export default function NavBar() {
   const logged = 1;
   return (
-    <div className="navbar gap-1 md:gap-2 justify-between items-center sticky top-0 bg-base-100 shadow">
+    <div className="navbar gap-1 md:gap-2 justify-between items-center sticky top-0 z-10 bg-base-100 border-b-2">
       <div>
         <div className="drawer">
           <input id="side-bar" type="checkbox" className="drawer-toggle" />

@@ -1,5 +1,5 @@
-import FilterBar from "@/components/FilterByCategory";
 import Navbar from "@/components/NavBar";
+import ProductList from "@/components/ProductList";
 
 function Text() {
   return (
@@ -16,11 +16,7 @@ export default function Home() {
   return (
     <main className="">
       <Navbar />
-      <Text />
-      <Text />
-      <Text />
-      <Text />
-      <Text />
+      <ProductList />
       <Text />
     </main>
   );
