@@ -132,12 +132,8 @@ export default function WithSideBar({ children }: { children: ReactNode }) {
   return (
     <div className="drawer">
       <input id="side-bar" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content ">
-        {/* Page content here */}
-
-        {children}
-      </div>
-      <div className="drawer-side ">
+      <div className="drawer-content ">{children}</div>
+      <div className="drawer-side z-20">
         <label
           htmlFor="side-bar"
           aria-label="close sidebar"

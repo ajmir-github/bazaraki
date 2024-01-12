@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function NavBar() {
   const logged = 1;
   return (
-    <div className="navbar gap-1 md:gap-2 justify-between items-center sticky top-0 bg-base-100 border-b-2 border-b-neutral">
+    <div className="navbar gap-1 md:gap-2 justify-between items-center bg-base-100 border-b-2 border-b-neutral">
       <div>
         <label htmlFor="side-bar" className="btn btn-ghost drawer-button">
           <SidebarOpenIcon />

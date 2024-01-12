@@ -104,7 +104,7 @@ const products: Product[] = [
 export default function ProductList() {
   const title = "New Products";
   return (
-    <main className="grid gap-1 md:gap-2 p-1 md:p-2">
+    <main className="grid gap-1 md:gap-2">
       {/* <h1 className="text-xl font-bold">{title}</h1> */}
       <div className="grid gap-1 md:gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {products.map((product) => (
