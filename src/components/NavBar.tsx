@@ -1,6 +1,7 @@
 import {
   LogInIcon,
   PlusIcon,
+  SearchIcon,
   SidebarCloseIcon,
   SidebarOpenIcon,
   UserIcon,
@@ -29,7 +30,7 @@ export default function NavBar() {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <div className="p-1 md:p-2 w-80 min-h-full bg-base-300 text-base-content flex flex-col gap-1 md:gap-2">
+            <div className="p-1 md:p-2 w-full sm:w-96 min-h-full bg-base-300 text-base-content flex flex-col gap-1 md:gap-2">
               <div className="flex justify-end">
                 <label
                   htmlFor="side-bar"
@@ -47,7 +48,10 @@ export default function NavBar() {
                   className="input input-primary w-full grow join-item"
                   name="search"
                 />
-                <button className="join-item btn btn-primary">Go</button>
+                <button className="join-item btn btn-primary">
+                  <SearchIcon />
+                  <span className="hidden md:block">Go</span>
+                </button>
               </form>
 
               <FilterByCategory />

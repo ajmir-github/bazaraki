@@ -55,6 +55,7 @@ const products: Product[] = [
       "/images/products/asian-muslim-hijab-woman-using-her-laptop-computer-isolated-white-background_262958-8170.jpg",
     ],
   },
+
   {
     id: "4",
     name: "Apple M2 Tablet",
@@ -84,6 +85,19 @@ const products: Product[] = [
       "/images/products/img_2287-1621270775533.jpeg",
       "/images/products/csm_PXL_20221115_0857194922_2_7_e198cc245e.jpg",
     ],
+  },
+  {
+    id: "6",
+    name: "Gaming Laptop",
+    price: 1950,
+
+    location: {
+      city: "Kabul",
+      district: "Macroyan 4",
+    },
+    category: "Laptops",
+
+    images: ["/images/products/maxresdefault.jpg"],
   },
 ];
 

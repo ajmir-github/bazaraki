@@ -123,7 +123,7 @@ export default function FilterByCategory({
   openByDefault?: boolean;
 }) {
   return (
-    <div className="menu gap-1 md:gap-2">
+    <div className="menu menu-lg gap-1 md:gap-2">
       {categories.map((category) => (
         <CategoryWithSub
           key={category.id}
