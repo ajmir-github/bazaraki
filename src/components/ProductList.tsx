@@ -109,10 +109,11 @@ export default function ProductList() {
       <div className="grid gap-1 md:gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {products.map((product) => (
           <Link
+            key={product.id}
             href={`/product/${product.id}`}
             className="border-2 hover:border-primary transition-colors duration-300 rounded box-border overflow-hidden"
           >
-            <article key={product.id} className="grid gap-1 md:gap-2">
+            <article className="grid gap-1 md:gap-2">
               <figure className="relative">
                 <Image
                   className="aspect-square object-cover w-full "
