@@ -1,12 +1,7 @@
-import {
-  LogInIcon,
-  PlusIcon,
-  SidebarCloseIcon,
-  SidebarOpenIcon,
-  UserIcon,
-} from "lucide-react";
+import { SearchIcon, SidebarCloseIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 interface Category {
   id: string;
@@ -103,7 +98,9 @@ function CategoryWithSub({
           <summary>{category.name}</summary>
           <ul className=" gap-1 md:gap-2 flex flex-col">
             <li>
-              <Link href={`/category=${category.id}`}>All {category.name}</Link>
+              <Link href={`/?category=${category.id}`}>
+                All {category.name}
+              </Link>
             </li>
             {category.sub.map((category) => (
               <CategoryWithSub key={category.id} category={category} />
@@ -111,17 +108,13 @@ function CategoryWithSub({
           </ul>
         </details>
       ) : (
-        <Link href={`/category=${category.id}`}>{category.name}</Link>
+        <Link href={`/?category=${category.id}`}>{category.name}</Link>
       )}
     </li>
   );
 }
 
-export default function FilterByCategory({
-  openByDefault,
-}: {
-  openByDefault?: boolean;
-}) {
+function FilterByCategory({ openByDefault }: { openByDefault?: boolean }) {
   return (
     <div className="menu menu-lg gap-1 md:gap-2">
       {categories.map((category) => (
@@ -131,6 +124,49 @@ export default function FilterByCategory({
           openByDefault={openByDefault}
         />
       ))}
+    </div>
+  );
+}
+
+export default function WithSideBar({ children }: { children: ReactNode }) {
+  return (
+    <div className="drawer">
+      <input id="side-bar" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content ">
+        {/* Page content here */}
+
+        {children}
+      </div>
+      <div className="drawer-side ">
+        <label
+          htmlFor="side-bar"
+          aria-label="close sidebar"
+          className="drawer-overlay"
+        ></label>
+        <div className="p-1 md:p-2 w-full sm:w-96 min-h-full bg-base-300 text-base-content flex flex-col gap-1 md:gap-2">
+          <div className="flex justify-end">
+            <label htmlFor="side-bar" className="btn btn-ghost drawer-button">
+              <SidebarCloseIcon />
+              <span className="hidden md:block">Close</span>
+            </label>
+          </div>
+
+          <form className="join" action={"/"}>
+            <input
+              type="search"
+              placeholder="Search by keywords"
+              className="input input-primary w-full grow join-item"
+              name="search"
+            />
+            <button className="join-item btn btn-primary">
+              <SearchIcon />
+              <span className="hidden md:block">Go</span>
+            </button>
+          </form>
+
+          <FilterByCategory />
+        </div>
+      </div>
     </div>
   );
 }

@@ -104,14 +104,14 @@ const products: Product[] = [
 export default function ProductList() {
   const title = "New Products";
   return (
-    <div className="grid gap-1 md:gap-2 p-1 md:p-2">
+    <main className="grid gap-1 md:gap-2 p-1 md:p-2">
       {/* <h1 className="text-xl font-bold">{title}</h1> */}
       <div className="grid gap-1 md:gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {products.map((product) => (
           <Link
             key={product.id}
             href={`/product/${product.id}`}
-            className="border-2 hover:border-primary transition-colors duration-300 rounded box-border overflow-hidden"
+            className="border-2 border-neutral hover:border-primary transition-colors duration-300 rounded box-border overflow-hidden"
           >
             <article className="grid gap-1 md:gap-2">
               <figure className="relative">
@@ -125,16 +125,11 @@ export default function ProductList() {
                 <span className="badge absolute top-2 right-2 gap-1">
                   <CameraIcon size={14} /> {product.images.length}
                 </span>
+                <span className="badge absolute top-2 left-2 gap-1">
+                  <EuroIcon size={14} /> {product.price}
+                </span>
               </figure>
               <div className="p-1 md:p-2">
-                <div className="flex justify-between text-sm">
-                  <span className="flex items-center gap-1">
-                    <TagIcon size={14} /> {product.category}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <EuroIcon size={14} /> {product.price}
-                  </span>
-                </div>
                 <h2 className="line-clamp-1 font-semibold text-lg">
                   {product.name}
                 </h2>
@@ -147,6 +142,6 @@ export default function ProductList() {
           </Link>
         ))}
       </div>
-    </div>
+    </main>
   );
 }

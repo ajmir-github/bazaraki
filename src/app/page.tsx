@@ -1,23 +1,17 @@
 import Navbar from "@/components/NavBar";
 import ProductList from "@/components/ProductList";
+import WithSideBar from "@/components/WithSidebar";
 
-function Text() {
+export default function Home({
+  searchParams,
+}: {
+  searchParams: { category?: string };
+}) {
+  console.log(searchParams);
   return (
-    <p className="text-4xl">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil,
-      voluptatum sit possimus debitis molestiae tempore distinctio id magni
-      similique iure modi unde labore earum, mollitia ut, cupiditate in rem
-      impedit.
-    </p>
-  );
-}
-
-export default function Home() {
-  return (
-    <main className="">
+    <WithSideBar>
       <Navbar />
       <ProductList />
-      <Text />
-    </main>
+    </WithSideBar>
   );
 }
