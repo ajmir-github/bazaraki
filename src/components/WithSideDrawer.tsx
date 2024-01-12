@@ -128,7 +128,7 @@ function FilterByCategory({ openByDefault }: { openByDefault?: boolean }) {
   );
 }
 
-export default function WithSideBar({ children }: { children: ReactNode }) {
+export default function WithSideDrawer({ children }: { children: ReactNode }) {
   return (
     <div className="drawer">
       <input id="side-bar" type="checkbox" className="drawer-toggle" />

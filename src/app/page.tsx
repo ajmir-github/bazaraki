@@ -1,6 +1,6 @@
 import Navbar from "@/components/NavBar";
 import ProductList from "@/components/ProductList";
-import WithSideBar from "@/components/WithSideBar";
+import WithSideDrawer from "@/components/WithSideDrawer";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 
 export default function Home({
@@ -10,7 +10,7 @@ export default function Home({
 }) {
   console.log(searchParams);
   return (
-    <WithSideBar>
+    <WithSideDrawer>
       <Navbar />
       <div className="grid md:grid-cols-12">
         <div className="col-span-8 lg:col-span-9 xl:col-span-10 p-1 md:p-2 grid gap-1 md:gap-2">
@@ -36,6 +36,6 @@ export default function Home({
           <div>ads</div>
         </div>
       </div>
-    </WithSideBar>
+    </WithSideDrawer>
   );
 }
