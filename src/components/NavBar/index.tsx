@@ -1,3 +1,4 @@
+import Category from "@/interface/Category";
 import {
   HomeIcon,
   InfoIcon,
@@ -6,25 +7,20 @@ import {
   UserPlusIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { IconSize } from "../constants";
 
-export default function NavBar() {
-  const categories = [
-    { id: "1", name: "Electronics" },
-    { id: "2", name: "Houses" },
-    { id: "3", name: "Cars" },
-    { id: "4", name: "House appliance" },
-  ];
+export default function NavBar({ categories }: { categories: Category[] }) {
   const MenuItems = () => (
     <>
       <li>
         <Link href={"/"}>
-          <HomeIcon size={12} /> Home
+          <HomeIcon size={IconSize.sm} /> Home
         </Link>
       </li>
       <li>
         <details>
           <summary>
-            <ListTreeIcon size={12} />
+            <ListTreeIcon size={IconSize.sm} />
             Items
           </summary>
           <ul className="p-2">
@@ -38,14 +34,14 @@ export default function NavBar() {
       </li>
       <li>
         <Link href={"/about"}>
-          <InfoIcon size={12} /> About
+          <InfoIcon size={IconSize.sm} /> About
         </Link>
       </li>
     </>
   );
 
   return (
-    <div className="navbar bg-base-200 rounded-xl">
+    <div className="navbar bg-base-100 shadow-lg rounded-xl">
       <div className="navbar-start gap-2">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,18 +72,18 @@ export default function NavBar() {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-2">
+        <ul className="menu menu-horizontal  px-1 gap-2">
           <MenuItems />
         </ul>
       </div>
       <div className="navbar-end">
         <div className="flex gap-2">
           <Link href={"/login"} className="join-item btn btn-ghost">
-            <LogInIcon size={16} />
+            <LogInIcon size={IconSize.md} />
             Login
           </Link>
           <Link href={"/register"} className="join-item btn btn-primary">
-            <UserPlusIcon size={16} />
+            <UserPlusIcon size={IconSize.md} />
             Register
           </Link>
         </div>
