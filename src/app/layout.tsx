@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +16,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const categories = [
+    { id: "1", name: "Electronics" },
+    { id: "2", name: "Houses" },
+    { id: "3", name: "Cars" },
+    { id: "4", name: "House appliance" },
+  ];
+
   return (
     <html lang="en" data-theme="light">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex flex-col min-h-screen p-2 md:p-4 gap-2 md:gap-4">
+          <NavBar categories={categories} />
+          <div className="grow flex flex-col gap-2 md:gap-4">{children}</div>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

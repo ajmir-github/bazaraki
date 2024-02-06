@@ -1,8 +1,7 @@
-import Navbar from "@/components/NavBar";
 import Filter from "@/components/Filter";
 import Stats from "@/components/Stats";
 import ItemList from "@/components/ItemList";
-import Footer from "@/components/Footer";
+import Pagination from "@/components/Pagination";
 
 interface Props {
   searchParams: {
@@ -36,14 +35,13 @@ export default function Home({ searchParams }: Props) {
   };
 
   return (
-    <div className="flex flex-col p-2 md:p-4 lg:p-6 gap-2 md:gap-4">
-      <Navbar categories={categories} />
+    <>
       <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
         <Filter categories={categories} searchParams={searchParams} />
         <Stats stats={stats} />
       </div>
       <ItemList />
-      <Footer />
-    </div>
+      <Pagination />
+    </>
   );
 }

@@ -26,7 +26,15 @@ export default function NavBar({ categories }: { categories: Category[] }) {
           <ul className="p-2">
             {categories.map(({ id, name }) => (
               <li key={id}>
-                <Link href={`/category/${id}`}>{name}</Link>
+                <Link
+                  href={{
+                    query: {
+                      category: id,
+                    },
+                  }}
+                >
+                  {name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -80,11 +88,11 @@ export default function NavBar({ categories }: { categories: Category[] }) {
         <div className="flex gap-2">
           <Link href={"/login"} className="join-item btn btn-ghost">
             <LogInIcon size={IconSize.md} />
-            Login
+            <span className="hidden sm:block">Login</span>
           </Link>
           <Link href={"/register"} className="join-item btn btn-primary">
             <UserPlusIcon size={IconSize.md} />
-            Register
+            <span className="hidden sm:block">Register</span>
           </Link>
         </div>
       </div>
