@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function ItemList() {
   const items = [1, 2, 3, 4, 5];
   return (
-    <div>
+    <div className="grid gap-4">
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2 xl:grid-cols-4">
         {items.map((item) => (
           <div
@@ -43,17 +43,17 @@ export default function ItemList() {
           </div>
         ))}
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-center">
         <div className="join grid grid-cols-2">
           <Link
             href={{ query: { page: 2 } }}
-            className="join-item btn btn-outline"
+            className="join-item btn btn-secondary btn-outline"
           >
             <ArrowLeftIcon size={IconSize.md} /> Previous page
           </Link>
           <Link
             href={{ query: { page: 3 } }}
-            className="join-item btn btn-outline"
+            className="join-item btn btn-secondary"
           >
             Next page <ArrowRightIcon size={IconSize.md} />
           </Link>
